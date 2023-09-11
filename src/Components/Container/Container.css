@@ -1,0 +1,20 @@
+.container{
+    background-color: #3b1933;
+    width: 100%;
+    height: 1000px;
+    margin-top: 65px;
+    position: fixed; 
+    
+    
+}
+
+.title-text{
+    padding-top: 78px;
+   
+}
+
+.question{
+    padding-left: 33rem;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+}
