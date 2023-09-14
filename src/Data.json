@@ -1,0 +1,53 @@
+[
+    {
+     "question1" : "Who is the prime minister of india",
+     "options1" : [
+        {
+            "opt1" : "narendra modi",
+            "value" : true
+                
+        },
+        {
+            "opt2" : "Manmohan singh",
+            "value" : false
+                
+        },
+        {
+            "opt3" : "Rahul gandhi",
+            "value" : false
+                
+        },
+        {
+            "opt4" : "aravind kejerival",
+            "value" : false
+                
+        }
+
+     ]
+    },
+
+    {
+        "question2" : "who invented the gravity",
+        "options2" : [
+            {
+                "opt1" : "Issac Newton",
+                "value" : true
+            },
+            {
+                "opt2" : "Albert einstein",
+                "value" : false
+            },
+            {
+                "opt3" : "Oppenhiemer",
+                "value" : false
+            },
+            {
+                "opt4" : "Abdul kalam azad",
+                "value" : false
+            }
+
+        ]
+
+
+    }
+]
