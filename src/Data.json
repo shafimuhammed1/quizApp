@@ -1,53 +1,23 @@
-[
+  [
     {
-     "question1" : "Who is the prime minister of india",
-     "options1" : [
-        {
-            "opt1" : "narendra modi",
-            "value" : true
-                
-        },
-        {
-            "opt2" : "Manmohan singh",
-            "value" : false
-                
-        },
-        {
-            "opt3" : "Rahul gandhi",
-            "value" : false
-                
-        },
-        {
-            "opt4" : "aravind kejerival",
-            "value" : false
-                
-        }
-
-     ]
+      "id": 1,
+      "question": "Who is the prime minister of India?",
+      "options": [
+        { "id": 1, "text": "Narendra Modi", "isCorrect": true },
+        { "id": 2, "text": "Manmohan Singh", "isCorrect": false },
+        { "id": 3, "text": "Rahul Gandhi", "isCorrect": false },
+        { "id": 4, "text": "Arvind Kejriwal", "isCorrect": false }
+      ]
     },
-
     {
-        "question2" : "who invented the gravity",
-        "options2" : [
-            {
-                "opt1" : "Issac Newton",
-                "value" : true
-            },
-            {
-                "opt2" : "Albert einstein",
-                "value" : false
-            },
-            {
-                "opt3" : "Oppenhiemer",
-                "value" : false
-            },
-            {
-                "opt4" : "Abdul kalam azad",
-                "value" : false
-            }
-
+        "id": 2,
+        "question": "Who is the Cheif minister of kerala?",
+        "options": [
+          { "id": 1, "text": "Pinarayi vijayan", "isCorrect": true },
+          { "id": 2, "text": "OOmmen chandi", "isCorrect": false },
+          { "id": 3, "text": "Ramesh chwnnithala", "isCorrect": false },
+          { "id": 4, "text": "Achudhananthan", "isCorrect": false }
         ]
-
-
-    }
-]
+      }
+  ]
+  

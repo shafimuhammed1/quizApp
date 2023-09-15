@@ -6,6 +6,7 @@ import Card from "./Components/Cards/Card";
 import FootBar from "./Components/FootBar/FootBar";
 
 
+
 function App() {
 
 
@@ -14,7 +15,7 @@ function App() {
     <div className="App">
      <NavBar/>
      <Container/>
-     <Card/>
+    
      <FootBar/>
     </div>
   );
