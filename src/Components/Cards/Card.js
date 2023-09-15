@@ -1,34 +1,18 @@
-import React,{useState} from 'react';
-import './Card.css';
+import React from 'react'
+import './Card.css'
 
-function Card() {
-  const [state,setState]=useState(0)
-
-
-
-
+function Card({ option, handleCardClick }) {
   return (
-
-    <div className='Card'>
-
+    <div className='Card' onClick={handleCardClick}>
       <div className='Card-container'>
-      <div class="question-card">
-       <h4 className='ans' onClick={()=>{
-       
-       }} ><b></b></h4>
+        <div className='question-card'>
+          <h4 className='ans'><b>{option.text}</b></h4>
+        </div>
+        <div className='question-card1'>
+          <h4 className='ans'><b>{option.text}</b></h4>
+        </div>
       </div>
-     <div class="question-card1">
-      <h4 className='ans'><b>John Doe</b></h4>
-     </div>
-     <div class="question-card2">
-      <h4 className='ans'><b>John Doe</b></h4>
-     </div>
-     <div class="question-card3">
-      <h4 className='ans'><b>John Doe</b></h4>
-     </div>
-     </div>
     </div>
- )
+  );
 }
-
-export default Card;
+export default Card
