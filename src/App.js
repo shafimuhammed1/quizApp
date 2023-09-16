@@ -12,10 +12,10 @@ function App() {
       "id": 1,
       "question": "Which library framework is used to build Facebook?",
       "options": [
-        { "id": 1, "text": "React", "isCorrect": false },
+        { "id": 1, "text": "React", "isCorrect": true },
         { "id": 2, "text": "Node", "isCorrect": false },
         { "id": 3, "text": "Bulma", "isCorrect": false },
-        { "id": 4, "text": "Node", "isCorrect": true }
+        { "id": 4, "text": "Vue", "isCorrect": false }
 
       ],
     },
@@ -41,36 +41,35 @@ function App() {
     }
   ];
 
-  const [presentQuestionData,setPresentQuestionData]=useState(0);
+  const [presentQuestionData, setPresentQuestionData] = useState(0);
   const currentQuestion = quizData[presentQuestionData];
 
   const handleCardClick = (selectedOption) => {
-    // Check if the selected option is correct
+
     if (selectedOption.isCorrect) {
       const nextQuestion = presentQuestionData + 1;
-  
+
       if (nextQuestion < quizData.length) {
         setPresentQuestionData(nextQuestion);
       } else {
         alert("All questions answered");
       }
     } else {
-      alert("Incorrect answer. Try again.");
+      // alert("Oops try again.");
     }
   }
-  
+
   return (
-   <div className="App">
+    <div className="App">
       <NavBar />
       <Container question={currentQuestion.question} />
-      <div className="Card-container">
-        {currentQuestion.options.map((option) => ( 
-          <Card key={option.id} option={option} handleCardClick={() => handleCardClick(option)} />
-        ))}
-      </div>
+      <Card
+        option={currentQuestion.options}
+        handleCardClick={handleCardClick}
+      />
       <FootBar />
     </div>
   )
-      }
+}
 
 export default App;
