@@ -10,32 +10,33 @@ function App() {
   const quizData = [
     {
       "id": 1,
-      "question": "Who is the Prime Minister of India?",
+      "question": "Which library framework is used to build Facebook?",
       "options": [
-        { "id": 1, "text": "Narendra Modi", "isCorrect": true },
-        { "id": 2, "text": "Manmohan Singh", "isCorrect": false },
-        { "id": 3, "text": "Rahul Gandhi", "isCorrect": false },
-        { "id": 4, "text": "Arvind Kejriwal", "isCorrect": false }
+        { "id": 1, "text": "React", "isCorrect": false },
+        { "id": 2, "text": "Node", "isCorrect": false },
+        { "id": 3, "text": "Bulma", "isCorrect": false },
+        { "id": 4, "text": "Node", "isCorrect": true }
+
       ],
     },
     {
       "id": 2,
-      "question": "Who is the Chief Minister of Kerala?",
+      "question": "What is the short form of Indian Space Research Organisation ?",
       "options": [
-        { "id": 1, "text": "Pinarayi Vijayan", "isCorrect": true },
-        { "id": 2, "text": "Oommen Chandy", "isCorrect": false },
-        { "id": 3, "text": "Ramesh Chennithala", "isCorrect": false },
-        { "id": 4, "text": "Achuthanandan", "isCorrect": false }
+        { "id": 1, "text": "ISRO", "isCorrect": true },
+        { "id": 2, "text": "INSP", "isCorrect": false },
+        { "id": 3, "text": "NASA", "isCorrect": false },
+        { "id": 4, "text": "INC", "isCorrect": false }
       ],
     },
     {
       "id": 3,
-      "question": "Who is the best director  of Kerala?",
+      "question": "Who won the world cup 2022?",
       "options": [
-        { "id": 1, "text": "Amal neerad", "isCorrect": true },
-        { "id": 2, "text": "Anwar rasheed", "isCorrect": false },
-        { "id": 3, "text": "Basil joseph", "isCorrect": false },
-        { "id": 4, "text": "Ljp", "isCorrect": false }
+        { "id": 1, "text": "ARG", "isCorrect": true },
+        { "id": 2, "text": "BRA", "isCorrect": false },
+        { "id": 3, "text": "IND", "isCorrect": false },
+        { "id": 4, "text": "GER", "isCorrect": false }
       ],
     }
   ];
@@ -43,19 +44,20 @@ function App() {
   const [presentQuestionData,setPresentQuestionData]=useState(0);
   const currentQuestion = quizData[presentQuestionData];
 
-const handleCardClick=()=>{
-  const nextQuestion= presentQuestionData+1;
-
-  if(nextQuestion<quizData.length){
-    setPresentQuestionData(nextQuestion);
-   
-  }else{
-    alert("all answerd");
+  const handleCardClick = (selectedOption) => {
+    // Check if the selected option is correct
+    if (selectedOption.isCorrect) {
+      const nextQuestion = presentQuestionData + 1;
+  
+      if (nextQuestion < quizData.length) {
+        setPresentQuestionData(nextQuestion);
+      } else {
+        alert("All questions answered");
+      }
+    } else {
+      alert("Incorrect answer. Try again.");
+    }
   }
-};
-
-
-
   
   return (
    <div className="App">
@@ -63,7 +65,7 @@ const handleCardClick=()=>{
       <Container question={currentQuestion.question} />
       <div className="Card-container">
         {currentQuestion.options.map((option) => ( 
-          <Card key={option.id} option={option} handleCardClick={handleCardClick} />
+          <Card key={option.id} option={option} handleCardClick={() => handleCardClick(option)} />
         ))}
       </div>
       <FootBar />
