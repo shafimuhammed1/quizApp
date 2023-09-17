@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import NavBar from "./Components/NavBar/NavBar";
-import Container from "./Components/Container/Container";
 import './App.css'
 import Card from "./Components/Cards/Card";
 import FootBar from "./Components/FootBar/FootBar";
-
+import Result from "./Components/Result/result";
 function App() {
   const quizData = [
     {
@@ -49,28 +48,32 @@ function App() {
     }
   ];
 
-  const [presentQuestionData, setPresentQuestionData] = useState(0);
-  const currentQuestion = quizData[presentQuestionData];
+  const [score, setScore] = useState(0);
+  const [count , setCount ] = useState(0);
+  const [isOver,setIsOver] = useState(false)
 
   const handleCardClick = (selectedOption) => {
-    if (selectedOption.isCorrect) {
-      const nextQuestion = presentQuestionData + 1;
-
-      if (nextQuestion < quizData.length) {
-        setPresentQuestionData(nextQuestion);
-      } else {
-        alert("All questions answered");
-      }
-    } else {
-      alert("WRONG.");
-    }
+     count === 0 && setScore(0)
+     if(selectedOption.isCorrect)
+     {
+      alert("correct answer")
+        setScore(score + 1);
+     }
+     else {
+        alert("wrong answer");
+     }
+     if(count < quizData.length -1 ) setCount(count + 1);
+     if(count === 3) setIsOver(true);
   }
-
+  const resetQuiz = ()=>{
+    setCount(0);
+    setScore(0);
+    setIsOver(false);
+  }
   return (
     <div className="App">
       <NavBar />
-      <Container question={currentQuestion.question} />
-      <Card option={currentQuestion.options} handleCardClick={handleCardClick} />
+      {!isOver ? <Card data={quizData} handleCardClick={handleCardClick} count={count} /> : <Result score={score} total={quizData.length} reset={resetQuiz} /> }  
       <FootBar />
     </div>
   );
