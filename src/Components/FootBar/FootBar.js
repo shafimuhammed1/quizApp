@@ -5,10 +5,7 @@ function FootBar() {
   return (
     <div className='footbar'>
       
-      
-      
-
-    </div>
+      </div>
   )
 }
 

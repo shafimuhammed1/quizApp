@@ -5,26 +5,27 @@ import './App.css'
 import Card from "./Components/Cards/Card";
 import FootBar from "./Components/FootBar/FootBar";
 
+
 function App() {
   const quizData = [
     {
       "id": 1,
-      "question": "Which library framework is used to build Facebook?",
+      "question": "Which library is used to build Facebook?",
       "options": [
-        { "id": 1, "text": "React", "isCorrect": true },
-        { "id": 2, "text": "Node", "isCorrect": false },
+        { "id": 1, "text": "React.js", "isCorrect": true },
+        { "id": 2, "text": "Node.js", "isCorrect": false },
         { "id": 3, "text": "Bulma", "isCorrect": false },
-        { "id": 4, "text": "Vue", "isCorrect": false }
+        { "id": 4, "text": "Vue.js", "isCorrect": false }
       ],
     },
     {
       "id": 2,
-      "question": "What is the short form of Indian Space Research Organisation?",
+      "question": "Which part of the body controls your thoughts?",
       "options": [
-        { "id": 1, "text": "INC", "isCorrect": false },
-        { "id": 2, "text": "INSP", "isCorrect": false },
-        { "id": 3, "text": "NASA", "isCorrect": false },
-        { "id": 4, "text": "ISRO", "isCorrect": true }
+        { "id": 1, "text": "Lungs", "isCorrect": false },
+        { "id": 2, "text": "Heart", "isCorrect": false },
+        { "id": 3, "text": "Eye", "isCorrect": false },
+        { "id": 4, "text": "Brain", "isCorrect": true }
       ],
     },
     {
@@ -39,7 +40,7 @@ function App() {
     },
     {
       "id": 4,
-      "question": "How many days consist in a leep year?",
+      "question": "How many days consist in a leap year?",
       "options": [
         { "id": 1, "text": "367", "isCorrect": false },
         { "id": 2, "text": "369", "isCorrect": false },
@@ -68,10 +69,11 @@ function App() {
 
   return (
     <div className="App">
+    
       <NavBar />
       <Container question={currentQuestion.question} />
       <Card option={currentQuestion.options} handleCardClick={handleCardClick} />
-      <FootBar />
+      <FootBar/>
     </div>
   );
 }

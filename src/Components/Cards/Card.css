@@ -12,17 +12,16 @@
     margin-left: 20px;
     display: flex;
     margin-right: 20px;
-    gap: 2rem;
+    gap: 1rem;
 }
 
 .question-card {
     height: 42vh;
-    background-color: #1f59ab;
     width: 25%;
     border-radius: 9px;
-    box-shadow: 0px 5px #292e6e;
+    box-shadow: 0px 5px #3b3b3b;
     text-align: center;
-    cursor: pointer;
+    cursor: pointer; 
 }
 
 .ans {
@@ -31,4 +30,6 @@
     color: white;
     font-size: 1.5rem;
    position: fixed;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
